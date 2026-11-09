@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties, type ReactNode } from "react"
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react"
 import envelope from "./assets/lace-envelope.png"
 import invitationPattern from "./assets/o.png"
 import laceCard from "./assets/lace-card-transparent.png"
@@ -106,17 +106,24 @@ export default function App() {
   const [opening, setOpening] = useState(false)
   const [opened, setOpened] = useState(false)
   const [timeLeft, setTimeLeft] = useState(getTimeLeft)
+  const musicRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
     const timer = window.setInterval(() => setTimeLeft(getTimeLeft()), 1000)
     return () => window.clearInterval(timer)
   }, [])
 
-  const openInvitation = () => {
-    if (opening) return
-    setOpening(true)
-    window.setTimeout(() => setOpened(true), 1200)
-  }
+ const openInvitation = () => {
+  if (opening) return
+
+  setOpening(true)
+
+  void musicRef.current?.play().catch((error) => {
+    console.error("تعذر تشغيل الموسيقى:", error)
+  })
+
+  window.setTimeout(() => setOpened(true), 1200)
+}
 
   const countdown = [
     { value: timeLeft.days, label: "يوم" },
@@ -132,6 +139,17 @@ export default function App() {
         { "--paper-pattern": `url(${invitationPattern})` } as CSSProperties
       }
     >
+      return (
+  <main
+    className="wedding-page"
+    style={{ "--paper-pattern": `url(${invitationPattern})` } as CSSProperties}
+  >
+   <audio
+  ref={musicRef}
+  src={`${import.meta.env.BASE_URL}%5B%40download_it_bot%20mp3%5D%20%D8%AE%D8%B1%D9%8A%D8%AC%D9%8A%D9%86%202026%20%20%20%23%D8%AA%D8%AE%D8%B1%D8%AC.mp3`}
+  preload="auto"
+  loop
+/>
       <section className={`welcome ${opening ? "is-opening" : ""}`}>
         <div className="welcome-heading">
           <span>Save the date</span>
