@@ -13,7 +13,10 @@
   mix-blend-mode: multiply;
 }
 
-/* Match the opened artwork's displayed width to the closed envelope. */
+/* The opened-envelope image has a white rectangle baked into the artwork.
+   Darken blending lets the page show through those white pixels. */
 .is-opening .envelope-image {
+  background: transparent;
+  mix-blend-mode: darken;
   transform: translateY(27px) scale(1);
 }
