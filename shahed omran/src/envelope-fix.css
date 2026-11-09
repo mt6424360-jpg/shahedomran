@@ -10,12 +10,14 @@
   border: 0;
   box-shadow: none;
   mix-blend-mode: multiply;
+  /* Brighten only the envelope artwork; the contents are separate elements. */
+  filter: brightness(1.18) saturate(0.9);
 }
 
-/* Keep the actual React image source for the opening state. The older CSS
-   override was replacing the image with a non-existent file, so the open
-   envelope never rendered correctly. */
+/* Use the standalone envelope artwork when opening, rather than the older
+   full-frame image. Its transparent background keeps only the envelope visible. */
 .is-opening .envelope-image {
+  content: url("./assets/open-envelope.png");
   background: transparent;
   mix-blend-mode: normal;
   transform: translateY(27px) scale(1);
