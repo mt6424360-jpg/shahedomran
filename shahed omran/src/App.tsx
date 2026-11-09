@@ -254,7 +254,14 @@ export default function App() {
               </a>
             </Detail>
             <Detail icon={<SnapchatIcon />} title="فلتر المناسبة">
-              فلتر السناب متاح يوم الحفل
+              <a
+                href="https://snapchat.com/t/e4k1c1u8"
+                target="_blank"
+                rel="noreferrer"
+              >
+                فلتر السناب متاح يوم الحفل
+                <span>افتحي فلتر السناب</span>
+              </a>
             </Detail>
           </div>
         </section>
