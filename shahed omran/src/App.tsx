@@ -251,7 +251,7 @@ export default function App() {
           <h3>موعدنا مع الفرح</h3>
           <div className="details-grid">
             <Detail icon={<CalendarIcon />} title="التاريخ">
-              الخميس، 12 نوفمبر 2026
+              السبت، 14 نوفمبر 2026
             </Detail>
             <Detail icon={<ClockIcon />} title="الوقت">
               الساعة الثامنة مساءً
@@ -262,7 +262,7 @@ export default function App() {
                 target="_blank"
                 rel="noreferrer"
               >
-                موقع قاعة الحفل
+                جامعة طرابلس كلية الصيدلة (مدرج الرازي)
                 <span>عرض على الخريطة</span>
               </a>
             </Detail>
@@ -291,7 +291,7 @@ export default function App() {
           <div className="footer-names">
           shahed omran
           </div>
-          <p> · 11 · 2026</p>
+          <p> 14 · 11 · 2026</p>
         </footer>
       </section>
     </main>
