@@ -5,16 +5,20 @@ invitationMusic.loop = true
 invitationMusic.preload = "auto"
 invitationMusic.volume = 0.8
 
-function handleEnvelopeClick(event: MouseEvent) {
-  const target = event.target
-  if (!(target instanceof Element)) return
-  if (!target.closest(".envelope-button, .open-prompt")) return
-
-  // Keep the listener for repeat opens if playback was blocked or failed.
+function playInvitationMusic() {
   void invitationMusic.play().catch((error: unknown) => {
     console.error("Invitation music playback failed:", musicUrl, error)
   })
 }
 
-// Capture the real user click before React handlers can stop propagation.
+function handleEnvelopeClick(event: MouseEvent) {
+  const target = event.target
+  if (!(target instanceof Element)) return
+  if (!target.closest(".envelope-button, .open-prompt")) return
+
+  playInvitationMusic()
+}
+
+// Capture the user's click before React handlers run; browsers permit playback
+// because this is called directly from the click gesture.
 document.addEventListener("click", handleEnvelopeClick, true)
