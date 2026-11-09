@@ -1,0 +1,4 @@
+/* Reveal the invitation and its artwork with a shorter entrance animation. */
+.invitation.is-visible {
+  animation-duration: 0.4s;
+}

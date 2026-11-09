@@ -3,15 +3,22 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import invitationPattern from './assets/o.png'
 import openEnvelope from './assets/a.png'
+import laceCard from './assets/lace-card-transparent.png'
+import couplePhoto from './assets/por.png'
+import plaque from './assets/plaque.png'
 import './index.css'
 import './envelope-fix.css'
+import './fast-images.css'
 import './music'
 
-// Start fetching the large artwork as soon as the app module loads, rather
-// than waiting until React paints the page or the user opens the envelope.
+// Preload artwork that appears as soon as the envelope opens so the browser
+// can fetch and decode it before the invitation is revealed.
 for (const [src, priority] of [
   [invitationPattern, 'high'],
-  [openEnvelope, 'auto'],
+  [openEnvelope, 'high'],
+  [laceCard, 'high'],
+  [couplePhoto, 'auto'],
+  [plaque, 'auto'],
 ] as const) {
   const image = new Image()
   image.decoding = 'async'
