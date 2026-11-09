@@ -12,3 +12,8 @@
   box-shadow: none;
   mix-blend-mode: multiply;
 }
+
+/* Match the opened artwork's displayed width to the closed envelope. */
+.is-opening .envelope-image {
+  transform: translateY(27px) scale(1);
+}
