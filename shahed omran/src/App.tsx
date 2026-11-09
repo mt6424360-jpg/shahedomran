@@ -1,5 +1,5 @@
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react"
-import envelope from "./assets/lace-envelope.jpg"
+import envelope from "./assets/lace-envelope.png"
 import invitationPattern from "./assets/o.png"
 import laceCard from "./assets/lace-card-transparent.png"
 import newPhoto from "./assets/por.png"
