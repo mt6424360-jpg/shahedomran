@@ -5,9 +5,9 @@ import laceCard from "./assets/lace-card-transparent.png"
 import newPhoto from "./assets/por.png"
 import seal from "./assets/w.jpg"
 import plaque from "./assets/plaque.png";
-import openEnvelope from "./assets/تصميم بدون عنوان (3).png"
+import openEnvelope from "./assets/ش.png"
 
-const WEDDING_DATE = new Date("2026-11-12T20:00:00")
+const WEDDING_DATE = new Date("2026-11-14T12:00:00")
 const COUPLE_HANDS = newPhoto
   
 type TimeLeft = {
@@ -173,7 +173,7 @@ export default function App() {
     <span className="envelope-contents" aria-hidden="true">
       <span className="hands-photo">
         <img src={COUPLE_HANDS} alt="" />
-        <small>12 · 11 · 26</small>
+        <small>14 · 11 · 26</small>
       </span>
       <img className="plaque-image" src={plaque} alt="Shahd & Omran" />
       <span className="name-ticket">
