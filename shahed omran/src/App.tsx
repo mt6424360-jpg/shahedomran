@@ -10,4 +10,3 @@ import openEnvelope from "./assets/a.png"
 const WEDDING_DATE = new Date("2026-11-14T12:00:00")
 const COUPLE_HANDS = newPhoto
   
-... [rest of App unchanged] ...
