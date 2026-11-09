@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react"
-import envelope from "./assets/lace-envelope.png"
+import envelope from "./assets/lace-envelop.png"
 import invitationPattern from "./assets/o.png"
 import laceCard from "./assets/lace-card-transparent.png"
 import newPhoto from "./assets/por.png"
 import seal from "./assets/w.jpg"
 import plaque from "./assets/plaque.png";
-import openEnvelope from "./assets/open-envelope.png"
+import openEnvelope from "./assets/تصميم بدون عنوان (3).png"
 
 const WEDDING_DATE = new Date("2026-11-12T20:00:00")
 const COUPLE_HANDS = newPhoto
