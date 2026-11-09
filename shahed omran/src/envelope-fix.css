@@ -12,10 +12,8 @@
   mix-blend-mode: multiply;
 }
 
-/* Use the standalone envelope artwork when opening, rather than the older
-   full-frame image. Its transparent background keeps only the envelope visible. */
+/* The opening image is supplied by React (a.png). Do not override it here. */
 .is-opening .envelope-image {
-  content: url("./assets/open-envelope.png");
   background: transparent;
   mix-blend-mode: normal;
   transform: translateY(27px) scale(1);
