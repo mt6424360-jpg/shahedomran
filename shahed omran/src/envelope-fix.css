@@ -1,5 +1,4 @@
-/* Remove the browser button frame and blend the envelope artwork's pale
-   rectangular background into the page, both before and after opening. */
+/* Remove the browser button frame. */
 .envelope-button {
   appearance: none;
   padding: 0;
@@ -13,10 +12,11 @@
   mix-blend-mode: multiply;
 }
 
-/* The opened-envelope image has a white rectangle baked into the artwork.
-   Darken blending lets the page show through those white pixels. */
+/* Use the standalone envelope artwork when opening, rather than the older
+   full-frame image. Its transparent background keeps only the envelope visible. */
 .is-opening .envelope-image {
+  content: url("./assets/open-envelope.png");
   background: transparent;
-  mix-blend-mode: darken;
+  mix-blend-mode: normal;
   transform: translateY(27px) scale(1);
 }
