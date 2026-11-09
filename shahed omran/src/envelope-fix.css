@@ -1,4 +1,5 @@
-/* Keep the envelope button itself from drawing a default browser frame. */
+/* Remove the browser button frame and blend the envelope artwork's pale
+   rectangular background into the page, both before and after opening. */
 .envelope-button {
   appearance: none;
   padding: 0;
@@ -6,9 +7,7 @@
   background: transparent;
 }
 
-/* The opened-envelope artwork has a pale surrounding panel; blend it into the
-   page and remove the extra border and shadow so the envelope is the focus. */
-.is-opening .envelope-image {
+.envelope-image {
   border: 0;
   box-shadow: none;
   mix-blend-mode: multiply;
